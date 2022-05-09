@@ -61,10 +61,11 @@
     }
   }
 
-  &--active {
+  &--active:not(&--caps-lock),
+  &--caps-lock-active {
     color: $g-color-white;
     text-shadow: 0 0 currentColor;
-    background-color: $g-color-primary-dark;
+    background-color: $g-color-primary-active;
     box-shadow: 0 0 5px $g-color-white;
 
     &:after {

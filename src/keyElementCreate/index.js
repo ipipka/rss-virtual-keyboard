@@ -10,19 +10,23 @@ const keyElementCreate = ({
 }) => {
   // ru
   let keyText = `<span class="char char--ru">${ru}</span>`;
-  keyText += `<span class="char char--ru-caps-shift">${ru}</span>`;
   keyText += `<span class="char char--ru-shift">${ruShift}</span>`;
   keyText += ruCapsEffect
     ? `<span class="char char--ru-caps">${ruShift}</span>`
     : `<span class="char char--ru-caps">${ru}</span>`;
+  keyText += ruCapsEffect
+    ? `<span class="char char--ru-caps-shift">${ru}</span>`
+    : `<span class="char char--ru-caps-shift">${ruShift}</span>`;
 
   // en
   keyText += `<span class="char char--en">${en}</span>`;
-  keyText += `<span class="char char--en-caps-shift">${en}</span>`;
   keyText += `<span class="char char--en-shift">${enShift}</span>`;
   keyText += enCapsEffect
-    ? `<span class="char char--ru-caps">${enShift}</span>`
-    : `<span class="char char--ru-caps">${en}</span>`;
+    ? `<span class="char char--en-caps">${enShift}</span>`
+    : `<span class="char char--en-caps">${en}</span>`;
+  keyText += enCapsEffect
+    ? `<span class="char char--en-caps-shift">${en}</span>`
+    : `<span class="char char--en-caps-shift">${enShift}</span>`;
 
   // create key
   const key = document.createElement('div');
