@@ -1,19 +1,22 @@
 /**
- * Key
+ * Keyboard
  */
 
  .keyboard {
   //
   // variables -----------------------------------------------------------------
-  $btn-fs: 20px;
-  $bth-size: 64px;
+  $indent: 24px;
 
   // ---------------------------------------------------------------------------
-  margin: 0;
+  padding: $indent;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: transparentize($g-color-primary, 0.3);
 
   &__row {
     margin-top: $key-gap;
     display: flex;
     gap: $key-gap;
   }
- }
+}

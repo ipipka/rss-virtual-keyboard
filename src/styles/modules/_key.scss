@@ -2,10 +2,11 @@
  * Key
  */
 
-.key {
+ .key {
   //
   // variables -----------------------------------------------------------------
-  $btn-fs: 20px;
+  $btn-fs: 22px;
+  $btn-round-indent: 6px;
 
   // ---------------------------------------------------------------------------
   margin: 0;
@@ -20,18 +21,29 @@
   font-weight: 400;
   text-align: center;
   text-decoration: none;
-  color: $g-color-white;
-  background-color: $g-color-black;
-  border: 2px solid $g-color-black;
+  color: transparentize($g-color-white, 0.18);
+  background-color: $g-color-primary;
+  border: none;
   border-radius: $key-br;
   box-shadow: none;
   overflow: hidden;
-  transition: border-color $g-transition-base, background-color $g-transition-base;
+  transition: background-color $g-transition-base, border-color $g-transition-base, box-shadow $g-transition-base, ;
   cursor: pointer;
   touch-action: manipulation;
   -webkit-user-select: none;
   -ms-user-select: none;
   user-select: none;
+
+  &:after {
+    content: "";
+    position: absolute;
+    top: $btn-round-indent;
+    bottom: $btn-round-indent;
+    left: $btn-round-indent;
+    right: $btn-round-indent;
+    background: linear-gradient(0deg, transparentize($g-color-black, 0.75), transparentize($g-color-black, 0.9));
+    border-radius: 24px;
+  }
 
   &[disabled] {
     opacity: 0.5;
@@ -39,10 +51,32 @@
     pointer-events: none;
   }
 
-  // &:hover,
-  // &:focus {
-  //   outline: none;
-  //   background-color: $g-color-primary-light;
-  //   border-color: $g-color-primary-light;
-  // }
+  &:hover {
+    color: $g-color-white;
+    text-shadow: 0 0 currentColor;
+
+    &:after {
+      background: linear-gradient(180deg, transparentize($g-color-black, 0.75), transparentize($g-color-black, 0.9));
+    }
+  }
+
+  &--active {
+    color: $g-color-white;
+    text-shadow: 0 0 currentColor;
+    background-color: $g-color-primary-dark;
+    box-shadow: 0 0 5px $g-color-white;
+
+    &:after {
+      background: linear-gradient(180deg, transparentize($g-color-black, 0.75), transparentize($g-color-black, 0.9));
+    }
+  }
+
+  &--backspace {
+    width: $key-size * 1.5;
+  }
+
+  &--tab {
+    width: $key-size * 1.5;
+  }
+
 }

@@ -1,9 +1,38 @@
-const keyElementCreate = () => {
-  const element = document.createElement('div');
-  element.classList.add('key');
-  element.innerHTML = 'key';
+const keyElementCreate = ({
+  code,
+  ru,
+  ruShift,
+  ruCapsEffect,
+  en,
+  enShift,
+  enCapsEffect,
+  className,
+}) => {
+  // ru
+  let keyText = `<span class="char char--ru">${ru}</span>`;
+  keyText += `<span class="char char--ru-caps-shift">${ru}</span>`;
+  keyText += `<span class="char char--ru-shift">${ruShift}</span>`;
+  keyText += ruCapsEffect
+    ? `<span class="char char--ru-caps">${ruShift}</span>`
+    : `<span class="char char--ru-caps">${ru}</span>`;
 
-  return element;
+  // en
+  keyText += `<span class="char char--en">${en}</span>`;
+  keyText += `<span class="char char--en-caps-shift">${en}</span>`;
+  keyText += `<span class="char char--en-shift">${enShift}</span>`;
+  keyText += enCapsEffect
+    ? `<span class="char char--ru-caps">${enShift}</span>`
+    : `<span class="char char--ru-caps">${en}</span>`;
+
+  // create key
+  const key = document.createElement('div');
+  key.classList.add('key');
+  if (className) {
+    key.classList.add(className);
+  }
+  key.dataset.code = code;
+  key.innerHTML = keyText;
+  return key;
 };
 
 export default keyElementCreate;

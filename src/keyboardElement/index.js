@@ -1,28 +1,29 @@
 import keyRowCreate from '../keyRowCreate/index';
 import keyElementCreate from '../keyElementCreate/index';
-// import keyboardData from '../keyboardData/index';
+import keyboardData from '../keyboardData/index';
 
 const keyboardCreate = () => {
   const element = document.createElement('div');
   element.classList.add('keyboard');
+  element.dataset.lang = keyboardData.lang;
+  element.dataset.caps = String(keyboardData.caps);
+  element.dataset.shift = String(keyboardData.shift);
 
   return element;
 };
 
 const keyboardElement = keyboardCreate();
-const keyboardRow1 = keyRowCreate();
-const keyboardRow2 = keyRowCreate();
+let keyCurrent = 0;
 
-// for (key of keyboardData.keys) {
-// }
+for (let row = 0; row < keyboardData.rows.length; row += 1) {
+  const keyboardRow = keyRowCreate();
 
-keyboardRow1.append(keyElementCreate());
-keyboardRow1.append(keyElementCreate());
-keyboardRow1.append(keyElementCreate());
-keyboardRow2.append(keyElementCreate());
-keyboardRow2.append(keyElementCreate());
+  for (let col = 0; col < keyboardData.rows[row]; col += 1) {
+    keyboardRow.append(keyElementCreate(keyboardData.keys[keyCurrent + col]));
+  }
 
-keyboardElement.append(keyboardRow1);
-keyboardElement.append(keyboardRow2);
+  keyboardElement.append(keyboardRow);
+  keyCurrent += keyboardData.rows[row];
+}
 
 export default keyboardElement;
