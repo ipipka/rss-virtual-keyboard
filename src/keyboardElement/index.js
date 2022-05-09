@@ -4,8 +4,10 @@ import keyboardData from '../keyboardData/index';
 
 const keyboardCreate = () => {
   const element = document.createElement('div');
+  const lang = localStorage.getItem('keyboardLang') || keyboardData.lang;
+
   element.classList.add('keyboard');
-  element.dataset.lang = keyboardData.lang;
+  element.dataset.lang = lang;
   element.dataset.caps = String(keyboardData.caps);
   element.dataset.shift = String(keyboardData.shift);
 

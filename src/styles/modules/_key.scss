@@ -42,7 +42,7 @@
     bottom: $btn-round-indent;
     left: $btn-round-indent;
     right: $btn-round-indent;
-    background: linear-gradient(0deg, transparentize($g-color-black, 0.75), transparentize($g-color-black, 0.9));
+    background: linear-gradient(0deg, transparentize($g-color-black, 0.7), transparentize($g-color-black, 0.9));
     border-radius: 24px;
   }
 
@@ -57,7 +57,7 @@
     text-shadow: 0 0 currentColor;
 
     &:after {
-      background: linear-gradient(180deg, transparentize($g-color-black, 0.75), transparentize($g-color-black, 0.9));
+      background: linear-gradient(180deg, transparentize($g-color-black, 0.7), transparentize($g-color-black, 0.9));
     }
   }
 
@@ -67,9 +67,11 @@
     text-shadow: 0 0 currentColor;
     background-color: $g-color-primary-active;
     box-shadow: 0 0 5px $g-color-white;
+    animation: key-active-shadow 3s linear infinite;
 
     &:after {
-      background: linear-gradient(180deg, transparentize($g-color-black, 0.75), transparentize($g-color-black, 0.9));
+      background: linear-gradient(180deg, transparentize($g-color-black, 0.7), transparentize($g-color-black, 0.9));
+      animation: key-active-circle 3s linear infinite;
     }
   }
 
@@ -150,5 +152,33 @@
     font-size: $btn-fs-text;
     position: absolute;
     right: $key-size + $key-gap;
+  }
+}
+
+@keyframes key-active-shadow {
+  0% {
+    box-shadow: 0 0 5px 1px transparentize($g-color-white, 0.9);
+  }
+
+  50% {
+    box-shadow: 0 0 5px 1px $g-color-white;
+  }
+
+  100% {
+    box-shadow: 0 0 5px 1px transparentize($g-color-white, 0.9);
+  }
+}
+
+@keyframes key-active-circle {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(0.9);
+  }
+
+  100% {
+    transform: scale(1);
   }
 }

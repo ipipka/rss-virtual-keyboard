@@ -1,6 +1,7 @@
 import './styles/style.scss';
 import keyboard from './keyboardElement/index';
 import keyboardModifierHandler from './keyboardModifierHandler/index';
+import keyboardLangHandler from './keyboardLangHandler';
 
 document.body.append(keyboard);
 
@@ -11,6 +12,7 @@ document.addEventListener('keydown', (e) => {
     targetKey.classList.add('key--active');
 
     keyboardModifierHandler(e);
+    keyboardLangHandler(e);
   }
 });
 
