@@ -1,9 +1,11 @@
 import './styles/style.scss';
 import keyboard from './keyboardElement/index';
+import about from './aboutElement/index';
 import keyboardModifierHandler from './keyboardModifierHandler/index';
 import keyboardLangHandler from './keyboardLangHandler';
 
 document.body.append(keyboard);
+document.body.append(about);
 
 document.addEventListener('keydown', (e) => {
   const targetKey = document.querySelector(`.key[data-code="${e.code}"]`);
