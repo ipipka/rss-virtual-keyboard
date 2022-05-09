@@ -1,0 +1,48 @@
+/**
+ * Key
+ */
+
+.key {
+  //
+  // variables -----------------------------------------------------------------
+  $btn-fs: 20px;
+
+  // ---------------------------------------------------------------------------
+  margin: 0;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: $key-size;
+  width: $key-size;
+  position: relative;
+  font-size: $btn-fs;
+  font-weight: 400;
+  text-align: center;
+  text-decoration: none;
+  color: $g-color-white;
+  background-color: $g-color-black;
+  border: 2px solid $g-color-black;
+  border-radius: $key-br;
+  box-shadow: none;
+  overflow: hidden;
+  transition: border-color $g-transition-base, background-color $g-transition-base;
+  cursor: pointer;
+  touch-action: manipulation;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+
+  &[disabled] {
+    opacity: 0.5;
+    box-shadow: none;
+    pointer-events: none;
+  }
+
+  // &:hover,
+  // &:focus {
+  //   outline: none;
+  //   background-color: $g-color-primary-light;
+  //   border-color: $g-color-primary-light;
+  // }
+}

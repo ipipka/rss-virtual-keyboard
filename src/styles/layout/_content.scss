@@ -1,0 +1,41 @@
+/*
+ * Base layout
+*/
+
+//
+// base layout -----------------------------------------------------------------
+html{
+  scroll-behavior: smooth;
+}
+
+.body {
+  height: auto;
+  min-height: 100%;
+  scroll-behavior: smooth;
+  background-color: $g-page-bg;
+
+  &--lock {
+    overflow: hidden;
+    height: 100vh;
+  }
+}
+
+.app {
+  position: relative;
+}
+
+.app-container {
+  margin: 0 auto;
+  padding: 0 $g-page-gutter;
+  max-width: $g-page-container-desktop;
+
+  // tablet
+  @include media-down($g-breakpoint-tablet) {
+    max-width: 100%;
+  }
+
+  // mobile
+  @include media-down($g-breakpoint-mobile) {
+    padding: 0 $g-page-gutter-mobile;
+  }
+}
