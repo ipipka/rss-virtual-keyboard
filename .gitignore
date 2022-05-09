@@ -1,0 +1,39 @@
+# Logs
+logs
+*.log
+
+# Compiled binary addons
+build/Release
+dist/
+
+# Dependency directories
+node_modules/
+
+# Optional npm cache directory
+.npm
+
+# parcel-bundler cache (https://parceljs.org/)
+.cache
+
+# IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+
+# NetBeans ###
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+build/
+
+# VS Code ###
+.vscode/
+.prettierrc
+.env
+
+### nodejs ###
+node_modules
+npm-debug.log*
