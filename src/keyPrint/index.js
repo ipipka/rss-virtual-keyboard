@@ -53,9 +53,6 @@ const keyPrint = (targetKey) => {
 
   field.value = text;
   return true;
-
-  // eslint-disable-next-line no-console
-  // console.log(`---\nkey=${caps}\nchar=${lang}\ncode=${shift}`);
 };
 
 export default keyPrint;

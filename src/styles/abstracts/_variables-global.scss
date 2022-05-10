@@ -10,9 +10,6 @@ $g-breakpoint-md: 1024px;
 $g-breakpoint-sm: 768px;
 $g-breakpoint-xs: 480px;
 
-$g-breakpoint-tablet: $g-breakpoint-md;
-$g-breakpoint-mobile: $g-breakpoint-xs;
-
 //
 // palette ---------------------------------------------------------------------
 $g-color-white: #ffffff;
@@ -33,18 +30,6 @@ $g-text-lh: 1;
 //
 // layout ----------------------------------------------------------------------
 $g-page-bg: $g-color-white;
-
-$g-page-container-desktop: 1260px;
-$g-page-gutter: 30px;
-$g-page-gutter-mobile: 10px;
-
-$g-header-h: 120px;
-$g-header-h-tablet: 90px;
-//
-//$g-footer-h-: 70px;
-
-$g-control-h: 52px;
-$g-control-gutter: 42px;
 
 //
 // key -------------------------------------------------------------------------
