@@ -49,6 +49,3 @@ document.addEventListener('keyup', (e) => {
     }
   }
 });
-
-// eslint-disable-next-line no-alert
-setTimeout(() => { alert('Прошу по возможности проверить работу немного позже (10 мая доделаю). Не успела...'); }, 500);
