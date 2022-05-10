@@ -61,6 +61,11 @@
     }
   }
 
+   &--click {
+     transition: background-color .15s ease;
+   }
+
+  &--click,
   &--active:not(&--caps-lock),
   &--caps-lock-active {
     color: $g-color-white;

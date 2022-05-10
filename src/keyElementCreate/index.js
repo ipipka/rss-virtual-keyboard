@@ -38,6 +38,26 @@ const keyElementCreate = ({
   key.dataset.modifier = keyModifier || 'false';
   key.dataset.code = code;
   key.innerHTML = keyText;
+
+  // click
+  if (!keyModifier) {
+    key.addEventListener('click', () => {
+      key.classList.add('key--click');
+      document.dispatchEvent(new KeyboardEvent('keydown', { code }));
+      document.dispatchEvent(new KeyboardEvent('keyup', { code }));
+
+      setTimeout(() => { key.classList.remove('key--click'); }, 150);
+    });
+  } else {
+    key.addEventListener('mousedown', () => {
+      document.dispatchEvent(new KeyboardEvent('keydown', { code }));
+    });
+
+    key.addEventListener('mouseup', () => {
+      document.dispatchEvent(new KeyboardEvent('keyup', { code }));
+    });
+  }
+
   return key;
 };
 
