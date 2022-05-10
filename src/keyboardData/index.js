@@ -3,8 +3,8 @@ const keyboardData = {
 
   // state
   lang: 'en',
-  caps: false,
-  shift: false,
+  caps: 'false',
+  shift: 'false',
 
   keys: [
     // row 1
@@ -134,6 +134,7 @@ const keyboardData = {
       enShift: '⇦',
       enCapsEffect: false,
       className: 'key--backspace',
+      keyModifier: true,
     },
 
     // row 2
@@ -146,6 +147,7 @@ const keyboardData = {
       enShift: 'tab',
       enCapsEffect: false,
       className: 'key--tab',
+      keyModifier: true,
     },
     {
       code: 'KeyQ',
@@ -273,6 +275,7 @@ const keyboardData = {
       enShift: 'caps lock',
       enCapsEffect: false,
       className: 'key--caps-lock',
+      keyModifier: true,
     },
     {
       code: 'KeyA',
@@ -382,6 +385,7 @@ const keyboardData = {
       enShift: 'enter',
       enCapsEffect: false,
       className: 'key--enter',
+      keyModifier: true,
     },
     {
       code: 'ShiftLeft',
@@ -392,6 +396,7 @@ const keyboardData = {
       enShift: 'shift',
       enCapsEffect: false,
       className: 'key--shift-left',
+      keyModifier: true,
     },
     {
       code: 'KeyZ',
@@ -492,6 +497,7 @@ const keyboardData = {
       enShift: 'shift',
       enCapsEffect: false,
       className: 'key--shift-right',
+      keyModifier: true,
     },
     {
       code: 'ControlLeft',
@@ -502,6 +508,7 @@ const keyboardData = {
       enShift: 'ctrl',
       enCapsEffect: false,
       className: 'key--ctrl-left',
+      keyModifier: true,
     },
     {
       code: 'AltLeft',
@@ -512,16 +519,18 @@ const keyboardData = {
       enShift: 'alt',
       enCapsEffect: false,
       className: 'key--alt-left',
+      keyModifier: true,
     },
     {
       code: 'Space',
-      ru: '',
-      ruShift: '',
+      ru: ' ',
+      ruShift: ' ',
       ruCapsEffect: false,
-      en: '',
-      enShift: '',
+      en: ' ',
+      enShift: ' ',
       enCapsEffect: false,
       className: 'key--space',
+      keyModifier: true,
     },
     {
       code: 'AltRight',
@@ -532,6 +541,7 @@ const keyboardData = {
       enShift: 'alt',
       enCapsEffect: false,
       className: 'key--alt-right',
+      keyModifier: true,
     },
     {
       code: 'ControlRight',
@@ -542,6 +552,7 @@ const keyboardData = {
       enShift: 'ctrl',
       enCapsEffect: false,
       className: 'key--ctrl-right',
+      keyModifier: true,
     },
     {
       code: 'ArrowLeft',
@@ -552,6 +563,7 @@ const keyboardData = {
       enShift: '←',
       enCapsEffect: false,
       className: 'key--arrow-left',
+      keyModifier: true,
     },
     {
       code: 'ArrowDown',
@@ -562,6 +574,7 @@ const keyboardData = {
       enShift: '↓',
       enCapsEffect: false,
       className: 'key--arrow-down',
+      keyModifier: true,
     },
     {
       code: 'ArrowRight',
@@ -572,6 +585,7 @@ const keyboardData = {
       enShift: '→',
       enCapsEffect: false,
       className: 'key--arrow-right',
+      keyModifier: true,
     },
     {
       code: 'ArrowUp',
@@ -582,6 +596,7 @@ const keyboardData = {
       enShift: '↑',
       enCapsEffect: false,
       className: 'key--arrow-up',
+      keyModifier: true,
     },
   ],
 };

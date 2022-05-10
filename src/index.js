@@ -1,9 +1,12 @@
 import './styles/style.scss';
 import keyboard from './keyboardElement/index';
 import about from './aboutElement/index';
+import field from './fieldElement/index';
 import keyboardModifierHandler from './keyboardModifierHandler/index';
-import keyboardLangHandler from './keyboardLangHandler';
+import keyboardLangHandler from './keyboardLangHandler/index';
+import keyPrint from './keyPrint/index';
 
+document.body.append(field);
 document.body.append(keyboard);
 document.body.append(about);
 
@@ -15,6 +18,8 @@ document.addEventListener('keydown', (e) => {
 
     keyboardModifierHandler(e);
     keyboardLangHandler(e);
+    keyPrint(targetKey, e);
+    e.preventDefault();
   }
 });
 

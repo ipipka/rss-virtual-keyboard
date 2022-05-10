@@ -7,6 +7,7 @@ const keyElementCreate = ({
   enShift,
   enCapsEffect,
   className,
+  keyModifier,
 }) => {
   // ru
   let keyText = `<span class="char char--ru">${ru}</span>`;
@@ -34,6 +35,7 @@ const keyElementCreate = ({
   if (className) {
     key.classList.add(className);
   }
+  key.dataset.modifier = keyModifier || 'false';
   key.dataset.code = code;
   key.innerHTML = keyText;
   return key;
