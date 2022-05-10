@@ -1,19 +1,23 @@
-const keyboardLangHandler = (e) => {
+const keyboardLangHandler = () => {
   const keyboard = document.querySelector('.keyboard');
+  const keyShiftLeft = document.querySelector('.key--shift-left.key--active');
+  const keyShiftRight = document.querySelector('.key--shift-right.key--active');
+  const keyAltLeft = document.querySelector('.key--alt-left.key--active');
+  const keyAltRight = document.querySelector('.key--alt-right.key--active');
 
-  // lang
-  if (['ShiftLeft', 'ShiftRight', 'AltLeft', 'AltRight'].includes(e.code) && !e.repeat) {
-    // alt + shift
-    if (e.getModifierState('Alt') && e.getModifierState('Shift')) {
-      const { lang } = keyboard.dataset;
+  const shiftActive = keyShiftLeft || keyShiftRight;
+  const altActive = keyAltLeft || keyAltRight;
 
-      if (lang === 'en') {
-        keyboard.dataset.lang = 'ru';
-        localStorage.setItem('keyboardLang', 'ru');
-      } else {
-        keyboard.dataset.lang = 'en';
-        localStorage.setItem('keyboardLang', 'en');
-      }
+  // alt + shift
+  if (shiftActive && altActive) {
+    const { lang } = keyboard.dataset;
+
+    if (lang === 'en') {
+      keyboard.dataset.lang = 'ru';
+      localStorage.setItem('keyboardLang', 'ru');
+    } else {
+      keyboard.dataset.lang = 'en';
+      localStorage.setItem('keyboardLang', 'en');
     }
   }
 };

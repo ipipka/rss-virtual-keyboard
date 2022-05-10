@@ -2,7 +2,8 @@ import './styles/style.scss';
 import keyboard from './keyboardElement/index';
 import about from './aboutElement/index';
 import field from './fieldElement/index';
-import keyboardModifierHandler from './keyboardModifierHandler/index';
+import keyboardCapsLockHandler from './keyboardCapsLockHandler/index';
+import keyboardShiftHandler from './keyboardShiftHandler/index';
 import keyboardLangHandler from './keyboardLangHandler/index';
 import keyPrint from './keyPrint/index';
 
@@ -16,8 +17,21 @@ document.addEventListener('keydown', (e) => {
   if (targetKey) {
     targetKey.classList.add('key--active');
 
-    keyboardModifierHandler(e);
-    keyboardLangHandler(e);
+    // press capsLock
+    if (e.code === 'CapsLock') {
+      keyboardCapsLockHandler(e);
+    }
+
+    // press shift
+    if (['ShiftLeft', 'ShiftRight'].includes(e.code) && !e.repeat) {
+      keyboardShiftHandler(e);
+    }
+
+    // press any langKey
+    if (['ShiftLeft', 'ShiftRight', 'AltLeft', 'AltRight'].includes(e.code) && !e.repeat) {
+      keyboardLangHandler(e);
+    }
+
     keyPrint(targetKey, e);
     e.preventDefault();
   }
@@ -29,7 +43,10 @@ document.addEventListener('keyup', (e) => {
   if (targetKey) {
     targetKey.classList.remove('key--active');
 
-    keyboardModifierHandler(e);
+    // press shift
+    if (['ShiftLeft', 'ShiftRight'].includes(e.code) && !e.repeat) {
+      keyboardShiftHandler(e);
+    }
   }
 });
 
