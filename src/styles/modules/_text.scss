@@ -1,0 +1,23 @@
+/**
+ * Text
+ */
+
+.text {
+  position: relative;
+  padding: 16px;
+  text-align: center;
+
+  &__field {
+    width: 100%;
+    padding: $key-gap;
+    max-width: 1032px;
+    height: $key-size * 2 + $key-gap;
+    border: 1px solid transparentize($g-color-primary-active, 0.75);
+    border-radius: $key-br;
+    resize: none;
+
+    &:focus {
+      outline: none;
+    }
+  }
+}

@@ -1,0 +1,17 @@
+/**
+ * Text on key
+ */
+
+ .char {
+  display: none;
+
+  .keyboard[data-lang="en"][data-caps="true"][data-shift="true"]   &--en-caps-shift { display: inline; }
+  .keyboard[data-lang="en"][data-caps="true"][data-shift="false"]  &--en-caps       { display: inline; }
+  .keyboard[data-lang="en"][data-caps="false"][data-shift="true"]  &--en-shift      { display: inline; }
+  .keyboard[data-lang="en"][data-caps="false"][data-shift="false"] &--en            { display: inline; }
+
+  .keyboard[data-lang="ru"][data-caps="true"][data-shift="true"]   &--ru-caps-shift { display: inline; }
+  .keyboard[data-lang="ru"][data-caps="true"][data-shift="false"]  &--ru-caps       { display: inline; }
+  .keyboard[data-lang="ru"][data-caps="false"][data-shift="true"]  &--ru-shift      { display: inline; }
+  .keyboard[data-lang="ru"][data-caps="false"][data-shift="false"] &--ru            { display: inline; }
+}

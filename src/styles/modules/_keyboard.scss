@@ -1,0 +1,23 @@
+/**
+ * Keyboard
+ */
+
+ .keyboard {
+  //
+  // variables -----------------------------------------------------------------
+  $indent: 24px;
+
+  // ---------------------------------------------------------------------------
+  padding: $indent;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: transparentize($g-color-primary, 0.3);
+
+  &__row {
+    margin-top: $key-gap;
+    display: flex;
+    gap: $key-gap;
+    position: relative;
+  }
+}

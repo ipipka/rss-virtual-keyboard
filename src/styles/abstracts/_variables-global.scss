@@ -1,0 +1,43 @@
+//
+// Global variables
+//
+
+//
+// breakpoints -----------------------------------------------------------------
+$g-breakpoint-xl: 1440px;
+$g-breakpoint-lg: 1280px;
+$g-breakpoint-md: 1024px;
+$g-breakpoint-sm: 768px;
+$g-breakpoint-xs: 480px;
+
+//
+// palette ---------------------------------------------------------------------
+$g-color-white: #ffffff;
+$g-color-black: #000000;
+
+$g-color-primary: #343e48;
+$g-color-primary-dark: #2e4862;
+$g-color-primary-active: #28619a;
+
+$g-color-danger: #d86369;
+
+//
+// base text -------------------------------------------------------------------
+$g-text-font: Arial, Helvetica, sans-serif;
+$g-text-fs: 18px;
+$g-text-lh: 1;
+
+//
+// layout ----------------------------------------------------------------------
+$g-page-bg: $g-color-white;
+
+//
+// key -------------------------------------------------------------------------
+$key-size: 64px;
+$key-size-arrow: 30px;
+$key-gap: 8px;
+$key-br: 8px;
+
+//
+// effects ---------------------------------------------------------------------
+$g-transition-base: 0.25s ease-in-out;

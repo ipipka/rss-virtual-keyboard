@@ -1,0 +1,26 @@
+/*
+ * Typography
+*/
+
+//
+// base font -------------------------------------------------------------------
+body {
+  color: $g-color-black;
+  font: 400 $g-text-fs $g-text-font;
+  line-height: $g-text-lh;
+}
+
+//
+// title -----------------------------------------------------------------------
+%h {
+  margin: 0;
+  padding: 0;
+  color: $g-color-black;
+  font-weight: 400;
+}
+
+h1,
+.h1 {
+  @extend %h;
+  font-size: 32px;
+}

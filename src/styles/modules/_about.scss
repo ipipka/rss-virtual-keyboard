@@ -1,0 +1,18 @@
+/**
+ * About
+ */
+
+.about {
+  margin: $key-gap * 2;
+  text-align: center;
+
+  &__content {
+    padding: 4px 20px;
+    display: inline-block;
+    font-size: 80%;
+    line-height: 20px;
+    color: transparentize($g-color-primary, 0.25);
+    background: transparentize($g-color-primary, 0.85);
+    border-radius: 24px;
+  }
+}

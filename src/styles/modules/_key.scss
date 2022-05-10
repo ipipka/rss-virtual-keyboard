@@ -1,0 +1,189 @@
+/**
+ * Key
+ */
+
+ .key {
+  //
+  // variables -----------------------------------------------------------------
+  $btn-fs: 22px;
+  $btn-fs-text: 18px;
+  $btn-round-indent: 6px;
+
+  // ---------------------------------------------------------------------------
+  margin: 0;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: $key-size;
+  width: $key-size;
+  position: relative;
+  font-size: $btn-fs;
+  font-weight: 400;
+  text-align: center;
+  text-decoration: none;
+  color: transparentize($g-color-white, 0.18);
+  background-color: $g-color-primary;
+  border: none;
+  border-radius: $key-br;
+  box-shadow: none;
+  overflow: hidden;
+  transition: background-color $g-transition-base, border-color $g-transition-base, box-shadow $g-transition-base, ;
+  cursor: pointer;
+  touch-action: manipulation;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+
+  &:after {
+    content: "";
+    position: absolute;
+    top: $btn-round-indent;
+    bottom: $btn-round-indent;
+    left: $btn-round-indent;
+    right: $btn-round-indent;
+    background: linear-gradient(0deg, transparentize($g-color-black, 0.7), transparentize($g-color-black, 0.9));
+    border-radius: 24px;
+  }
+
+  &[disabled] {
+    opacity: 0.5;
+    box-shadow: none;
+    pointer-events: none;
+  }
+
+  &:hover {
+    color: $g-color-white;
+    text-shadow: 0 0 currentColor;
+
+    &:after {
+      background: linear-gradient(180deg, transparentize($g-color-black, 0.7), transparentize($g-color-black, 0.9));
+    }
+  }
+
+   &--click {
+     transition: background-color .15s ease;
+   }
+
+  &--click,
+  &--active:not(&--caps-lock),
+  &--caps-lock-active {
+    color: $g-color-white;
+    text-shadow: 0 0 currentColor;
+    background-color: $g-color-primary-active;
+    box-shadow: 0 0 5px $g-color-white;
+    animation: key-active-shadow 3s linear infinite;
+
+    &:after {
+      background: linear-gradient(180deg, transparentize($g-color-black, 0.7), transparentize($g-color-black, 0.9));
+      animation: key-active-circle 3s linear infinite;
+    }
+  }
+
+  &--backspace {
+    width: $key-size * 1.5;
+  }
+
+  &--tab {
+    width: $key-size * 1.5;
+    font-size: $btn-fs-text;
+  }
+
+  &--caps-lock {
+    width: $key-size * 1.75;
+    font-size: $btn-fs-text;
+  }
+
+  &--enter {
+    width: $key-size * 1.75 + $key-gap;
+    font-size: $btn-fs-text;
+  }
+
+  &--shift-left {
+    width: $key-size * 2.25 + $key-gap;
+    font-size: $btn-fs-text;
+  }
+
+  &--shift-right {
+    width: $key-size * 2.25 + $key-gap;
+    font-size: $btn-fs-text;
+  }
+
+  &--ctrl-left {
+    width: $key-size * 1.5 + $key-gap;
+    font-size: $btn-fs-text;
+  }
+
+  &--ctrl-right {
+    width: $key-size * 1.5 + $key-gap;
+    font-size: $btn-fs-text;
+  }
+
+  &--space {
+    width: $key-size * 6 + $key-gap * 4;
+    font-size: $btn-fs-text;
+  }
+
+  &--alt-left {
+    width: $key-size * 1.25;
+    font-size: $btn-fs-text;
+  }
+
+  &--alt-right {
+    width: $key-size * 1.25;
+    font-size: $btn-fs-text;
+  }
+
+  &--arrow-left {
+    height: $key-size-arrow;
+    margin-top: $key-size - $key-size-arrow;
+    font-size: $btn-fs-text;
+  }
+
+  &--arrow-down {
+    height: $key-size-arrow;
+    margin-top: $key-size - $key-size-arrow;
+    font-size: $btn-fs-text;
+  }
+
+  &--arrow-right {
+    height: $key-size-arrow;
+    margin-top: $key-size - $key-size-arrow;
+    font-size: $btn-fs-text;
+  }
+
+  &--arrow-up {
+    height: $key-size-arrow;
+    font-size: $btn-fs-text;
+    position: absolute;
+    right: $key-size + $key-gap;
+  }
+}
+
+@keyframes key-active-shadow {
+  0% {
+    box-shadow: 0 0 5px 1px transparentize($g-color-white, 0.9);
+  }
+
+  50% {
+    box-shadow: 0 0 5px 1px $g-color-white;
+  }
+
+  100% {
+    box-shadow: 0 0 5px 1px transparentize($g-color-white, 0.9);
+  }
+}
+
+@keyframes key-active-circle {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(0.9);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
